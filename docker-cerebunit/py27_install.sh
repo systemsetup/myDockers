@@ -28,7 +28,7 @@ mkdir iv && mkdir nrn
 cd iv-19 && ./configure --prefix='/simulators/neuron7.5/iv'
 make && make install clean
 cd .. && cd nrn-7.5
-./configure --prefix='/simulators/neuron7.5/nrn' --with-nrnpython --with-paranrn --with-iv
+./configure --prefix='/simulators/neuron7.5/nrn' --with-nrnpython --with-paranrn --with-iv --disable-rx3d
 make && make install clean
 # Install
 cd src/nrnpython && python setup.py install --home=/simulators/neuron7.5
@@ -41,7 +41,7 @@ cd simulators
 # Install NEST setup
 mkdir nest2.16 && cd nest2.16
 wget "https://github.com/nest/nest-simulator/archive/v2.16.0.tar.gz"
-tar xzf v2.16.0.tar.gz && cd nest2.16
+tar xzf v2.16.0.tar.gz && cd nest-simulator-2.16.0
 # Preinstall configure
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/nest2.16/
 # Install
