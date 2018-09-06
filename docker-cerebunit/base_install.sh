@@ -8,7 +8,7 @@
 # git clone https://github.com/systemsetup/myDockers.git
 # cd 
 # chmod +x base_install.sh
-# base_install.sh
+# bash base_install.sh
 
 # Base installations
 apt-get install -y wget bzip2 vim tmux build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc python2.7 python-pip python-tk python-lxml libhdf5-serial-dev

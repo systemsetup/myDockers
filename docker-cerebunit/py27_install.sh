@@ -4,7 +4,7 @@
 # base_install.sh
 # to run this script
 # chmod +x py27_install.sh
-# py27_install.sh
+# bash py27_install.sh
 
 # Create environment for python2.7
 virtualenv -p /usr/bin/python2.7 /envs/py27-cerebunit
