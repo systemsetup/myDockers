@@ -22,7 +22,6 @@ apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev
 
 # Packges for setting virtual environments
 pip install --upgrade pip
-#pip install -U pip setuptools virtualenv
-pip install -U setuptools
-pip install -U virtualenv
-pip install -U pip
+pip install -U pip setuptools virtualenv
+# because of https://github.com/pypa/pip/issues/5240
+# you may need to run bash base_install.sh AGAIN
