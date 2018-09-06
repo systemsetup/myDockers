@@ -14,7 +14,7 @@ source /envs/py27-cerebunit/bin/activate
 pip install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant pynwb sciunit bokeh
 pip install dask distributed --upgrade
 
-cd /home
+cd /
 mkdir simulators && cd simulators
 
 ############################### NEURON ##################################
