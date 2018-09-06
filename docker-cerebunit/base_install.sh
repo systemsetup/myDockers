@@ -21,7 +21,7 @@ apt-get install -y libx11-dev libxext-dev mpich libncurses-dev
 apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev libgsl0-dev gsl-bin python-all-dev cython
 
 # Packges for setting virtual environments
-pip install -U --upgrade pip
+pip install --upgrade pip
 #pip install -U pip setuptools virtualenv
 pip install -U setuptools
 pip install -U virtualenv
