@@ -25,13 +25,13 @@ wget "http://www.neuron.yale.edu/ftp/neuron/versions/v7.5/iv-19.tar.gz"
 tar xzf nrn-7.5.tar.gz && tar xzf iv-19.tar.gz
 mkdir iv && mkdir nrn
 # Preinstall configure
-cd iv-19 && ./configure --prefix='/home/simulators/neuron7.5/iv'
+cd iv-19 && ./configure --prefix='/simulators/neuron7.5/iv'
 make && make install clean
 cd .. && cd nrn-7.5
-./configure --prefix='/home/simulators/neuron7.5/nrn' --with-nrnpython --with-paranrn --with-iv
+./configure --prefix='/simulators/neuron7.5/nrn' --with-nrnpython --with-paranrn --with-iv
 make && make install clean
 # Install
-cd src/nrnpython && python setup.py install --home=/home/simulators/neuron7.5
+cd src/nrnpython && python setup.py install --home=/simulators/neuron7.5
 ########################################################################
 
 cd /home/simulators
