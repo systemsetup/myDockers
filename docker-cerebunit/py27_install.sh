@@ -39,9 +39,9 @@ cd simulators
 
 ################################ NEST ##################################
 # Install NEST setup
-mkdir nest2.16
+mkdir nest2.16 && cd nest2.16
 wget "https://github.com/nest/nest-simulator/archive/v2.16.0.tar.gz"
-tar xzf nest-2.16.0.tar.gz && cd nest-2.16.0
+tar xzf v2.16.0.tar.gz && cd nest2.16
 # Preinstall configure
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/nest2.16/
 # Install
