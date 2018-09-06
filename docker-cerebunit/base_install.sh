@@ -22,4 +22,7 @@ apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev
 
 # Packges for setting virtual environments
 pip install -U --upgrade pip
-pip install -U pip setuptools virtualenv
+#pip install -U pip setuptools virtualenv
+pip install -U setuptools
+pip install -U virtualenv
+pip install -U pip
