@@ -34,7 +34,8 @@ make && make install clean
 cd src/nrnpython && python setup.py install --home=/simulators/neuron7.5
 ########################################################################
 
-cd /home/simulators
+cd /
+cd simulators
 
 ################################ NEST ##################################
 # Install NEST setup
