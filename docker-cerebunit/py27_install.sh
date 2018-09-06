@@ -32,6 +32,9 @@ cd .. && cd nrn-7.5
 make && make install clean
 # Install
 cd src/nrnpython && python setup.py install --home=/simulators/neuron7.5
+# NOTE: For v7.5 ignore h3class.py error
+# https://neurojustas.wordpress.com/2018/03/27/tutorial-installing-neuron-simulator-with-python-on-ubuntu-linux/
+# https://www.neuron.yale.edu/phpBB/viewtopic.php?f=6&t=3834&p=16482&hilit=MetaHocObject#p16482
 ########################################################################
 
 cd /
