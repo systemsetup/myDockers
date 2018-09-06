@@ -5,7 +5,7 @@
 # sudo docker run -ti ubuntu:16.04 bash
 # apt-get -qq update
 # apt-get install -y git
-# git clone
+# git clone https://github.com/systemsetup/myDockers.git
 # cd 
 # chmod +x base_install.sh
 # base_install.sh
