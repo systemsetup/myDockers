@@ -35,6 +35,9 @@ cd src/nrnpython && python setup.py install --home=/simulators/neuron7.5
 # NOTE: For v7.5 ignore h3class.py error
 # https://neurojustas.wordpress.com/2018/03/27/tutorial-installing-neuron-simulator-with-python-on-ubuntu-linux/
 # https://www.neuron.yale.edu/phpBB/viewtopic.php?f=6&t=3834&p=16482&hilit=MetaHocObject#p16482
+#
+export PATH="/simulators/neuron7.5/iv/x86_64/bin:$PATH"
+export PATH="/simulators/neuron7.5/nrn/x86_64/bin:$PATH"
 ########################################################################
 
 cd /
@@ -56,8 +59,5 @@ make && make install clean
 # vi /envs/py27-cerebunit/lib/python2.7/site-packages/installed_sims.pth
 # Add NEURON to path
 #/simulators/neuron7.5/lib/python
-# Add IV and NEURON to path variable
-#export PATH="/simulators/neuron7.5/iv/x86_64/bin:$PATH"
-#export PATH="/simulators/neuron7.5/nrn/x86_64/bin:$PATH"
 # Add NEST to path
 #/simulators/nest2.16/lib/python2.7/site-packages
