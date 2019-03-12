@@ -91,13 +91,27 @@ pip install pymoose
 #python setup.py install --home=/simulators/brian2-2.0.1
 ########################################################################
 
+cd / && cd simulators
+
+################################ PyNN #################################
+# Install pre-built package
+#pip install pyNN
+# Alternatively
+mkdir pyNN-0.9.3 && cd pyNN-0.9.3
+git clone https://github.com/NeuralEnsemble/PyNN.git
+pip install --install-option="--prefix=/simulators/pyNN-0.9.3" ./PyNN
+#
+# NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
+########################################################################
+
 
 
 ############################# POST-INSTALL #############################
 # create installed_sims.pth
 # vi /envs/py27-cerebunit/lib/python2.7/site-packages/installed_sims.pth
-# Add NEURON to path
+## Add NEURON to path
 #/simulators/neuron7.5/lib/python
-# Add NEST to path
+## Add NEST to path
 #/simulators/nest2.16/lib/python2.7/site-packages
-
+# Add PyNN to path
+#/simulators/pyNN-0.9.3/lib/python2.7/site-packages
