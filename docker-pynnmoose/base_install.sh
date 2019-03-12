@@ -18,7 +18,7 @@ apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopen
 apt-get install -y libx11-dev libxext-dev mpich libncurses-dev
 
 # Install for NEST
-#apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev libgsl0-dev gsl-bin python-all-dev cython
+apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev libgsl0-dev gsl-bin python-all-dev cython
 
 # Install for MOOSE
 apt-get install -y pkg-config libgraphviz-dev libhdf5-dev
