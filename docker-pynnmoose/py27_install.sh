@@ -14,6 +14,9 @@ source /envs/py27-pyNNmoose/bin/activate
 pip install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant pynwb sciunit bokeh
 pip install dask distributed --upgrade
 
+# Deactivate the activated virtualenv once python related packages are installed
+deactivate
+
 # Got to root directory and create an installation directory where the installed simulator will be located
 cd / && mkdir simulators && cd simulators
 
@@ -65,8 +68,10 @@ make && make install clean
 
 
 ################################ MOOSE #################################
-# Install pre-built package
+## Install pre-built package
+source /envs/py27-pyNNmoose/bin/activate
 pip install pymoose
+deactivate
 ## To Build and install from it
 #cd / && cd simulators && mkdir moose3.1 && cd moose3.1
 #git clone https://github.com/BhallaLab/moose
@@ -80,8 +85,10 @@ pip install pymoose
 
 
 ################################ BRIAN2 #################################
-# Install pre-built package
+## Install pre-built package
+#source /envs/py27-pyNNmoose/bin/activate
 #pip install brian2
+#deactivate
 # Alternatively
 #pip install pyparsing sympy sphinxcontrib-issuetracker sphinx
 #
@@ -94,7 +101,8 @@ pip install pymoose
 cd / && cd simulators
 
 ################################ PyNN #################################
-# Install pre-built package
+source /envs/py27-pyNNmoose/bin/activate
+## Install pre-built package
 #pip install pyNN
 # Alternatively
 mkdir pyNN-0.9.3 && cd pyNN-0.9.3
@@ -102,6 +110,8 @@ git clone https://github.com/NeuralEnsemble/PyNN.git
 pip install --install-option="--prefix=/simulators/pyNN-0.9.3" ./PyNN
 #
 # NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
+#
+deactivate
 ########################################################################
 
 
