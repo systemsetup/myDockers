@@ -18,7 +18,7 @@ apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopen
 # for python2.7
 apt-get install -y python2.7 python-pip python-tk python-lxml libhdf5-serial-dev python-all-dev cython
 # for python3
-#apt-get install -y python3 python3-pip python3-tk python3-lxml libhdf5-serial-dev python3-dev cython3
+apt-get install -y python3 python3-pip python3-tk python3-lxml libhdf5-serial-dev python3-dev cython3
 
 # Install for NEURON
 apt-get install -y libx11-dev libxext-dev mpich libncurses-dev
@@ -34,4 +34,4 @@ apt-get install -y pkg-config libgraphviz-dev libhdf5-dev
 pip install --upgrade pip
 pip install -U pip setuptools virtualenv
 # for python3
-#pip3 install --upgrade pip setuptools virtualenv
+pip3 install --upgrade pip setuptools virtualenv
