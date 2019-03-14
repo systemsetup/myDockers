@@ -6,10 +6,10 @@ docker images
 returns a list of available (local) images.
 
 Running a docker image is like running the image as another image (which is called a container to avoid the confusion).
-![Image and its container](images/mechanics_of_docker/mechanism_docker_image_run_container.png)
+![Image and its container](images/mechanism_docker/mechanism_docker_image_run_container.png)
 
 To run an image
-![docker command to run](images/mechanics_of_docker/mechanism_docker_run_command.png)
+![docker command to run](images/mechanism_docker/mechanism_docker_run_command.png)
 
 ## Tag of a docker image
 Every image has a **tag** which by default is `latest`. An image with a number of tags can be thought of as different variants of the image.
@@ -21,7 +21,7 @@ Thus,
 - containers are created from images
 - when you run an image, i.e., inside a container, and make changes like create files or install softwares, the changes will disappear if container after exit is not commited.
 
-![Basic Docker Mechanics](images/mechanics_of_docker/mechanism_docker_ubuntu_example.png)
+![Basic Docker Mechanics](images/mechanism_docker/mechanism_docker_ubuntu_example.png)
 
 Note:
 - for a list of **all containers**
