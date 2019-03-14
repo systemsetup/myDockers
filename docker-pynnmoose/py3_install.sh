@@ -17,6 +17,8 @@ pip3 install dask distributed --upgrade
 # Deactivate the activated virtualenv once python related packages are installed
 deactivate
 
+# ** => places were configuration is made for Python3
+
 # Got to root directory and create an installation directory where the installed simulator will be located
 cd / && mkdir simulators && cd simulators
 
@@ -33,7 +35,8 @@ cd iv-19 && ./configure --prefix='/simulators/neuron7.5/iv'
 make && make install clean
 # Do the same for the other extracted package
 cd .. && cd nrn-7.5
-./configure --prefix='/simulators/neuron7.5/nrn' --with-nrnpython --with-paranrn --with-iv --disable-rx3d
+# ********************************************************************************************************************* Python3 Config
+./configure --prefix='/simulators/neuron7.5/nrn' --with-pyexe=python3 --with-nrnpython --with-paranrn --with-iv --disable-rx3d
 make && make install clean
 # Finally Install
 cd src/nrnpython && python3 setup.py install --home=/simulators/neuron7.5
@@ -60,7 +63,8 @@ wget "https://github.com/nest/nest-simulator/archive/v2.16.0.tar.gz"
 # Extract them and go to the extracted folder
 tar xzf v2.16.0.tar.gz && cd nest-simulator-2.16.0
 # Preinstall configure
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/nest2.16/
+# ********************************************************************************************************************* Python3 Config
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/nest2.16/ -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3.6
 # Install
 make && make install clean
 ########################################################################
@@ -122,6 +126,6 @@ deactivate
 ## Add NEURON to path
 #/simulators/neuron7.5/lib/python
 ## Add NEST to path
-#/simulators/nest2.16/lib/python3/site-packages
+#/simulators/nest2.16/lib/python3.x/site-packages
 # Add PyNN to path
 #/simulators/pyNN-0.9.3/lib/python3.x/site-packages
