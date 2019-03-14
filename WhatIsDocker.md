@@ -8,4 +8,4 @@ It is a self contained sealed unit of software containing everything required to
 
 ## What happens when you install Docker?
 
-You install softwares: **Docker**, **VirtualBox** and **docker-machine**.
+You install softwares: [**Docker**](https://www.docker.com/), [**VirtualBox**](https://www.virtualbox.org/) and [**docker-machine**](https://github.com/docker/machine).
