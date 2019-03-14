@@ -78,7 +78,15 @@ docker run -ti -p 8888:8888 \
                <image_name>:<its_tag> bash
 ```
 
-#### 2.3.3. Serial processing
+#### 2.3.3. Run Bokeh (default port)
+```
+docker run -ti -p 5006:5006 \
+               -v /path/to/local/directory:/path/to/container/directory \
+               -w /path/to/container/directory \
+               <image_name>:<its_tag> bash
+```
+
+#### 2.3.4. Serial processing
 ```
 docker run -ti <image_name>:<its_tag> bash -c "sleep 3; echo all done"
 ```
