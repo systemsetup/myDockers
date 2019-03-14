@@ -8,6 +8,7 @@ It is a self contained sealed unit of software containing everything required to
 
 ## What happens when you install Docker?
 
-You install softwares: [**Docker**](https://www.docker.com/), [**VirtualBox**](https://www.virtualbox.org/) and [**docker-machine**](https://github.com/docker/machine).
+You install softwares: [**Docker**](https://www.docker.com/), [**docker-machine**](https://github.com/docker/machine) and [**VirtualBox**](https://www.virtualbox.org/). VirtualBox manages virtual machines, among which is docker-machine, inside it is the Docker program.
 
-![What is Docker?][images/what_is_docker.png]
+![What is Docker?](images/what_is_docker.png)
+
