@@ -118,7 +118,7 @@ deactivate
 
 ############################# POST-INSTALL #############################
 # create installed_sims.pth
-# vi /envs/py3-pyNNmoose/lib/python3/site-packages/installed_sims.pth
+# vi /envs/py3-pyNNmoose/lib/python3.x/site-packages/installed_sims.pth
 ## Add NEURON to path
 #/simulators/neuron7.5/lib/python
 ## Add NEST to path
