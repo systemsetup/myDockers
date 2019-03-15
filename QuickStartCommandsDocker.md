@@ -17,11 +17,18 @@ whoami
 will return the `<username>`. To logout `sudo pkill -KILL -u <username>` or `sudo pkill -9 -u <username>`.
 
 To run docker commands without the prefix `sudo` do
+
+- Debian based
 ```
 sudo usermod -aG docker <username>
 ```
+- Fedora
+```
+sudo groupadd docker
+sudo gpasswd -a ${USER}
+```
 
-Assuming that you have docker images collected using `docker pull <image_name>:<its_tag>`
+Finally, assuming that you have docker images collected using `docker pull <image_name>:<its_tag>`
 
 ## 2. Running an image
 ### 2.1. Running in current console window, i.e., interactive mode.
