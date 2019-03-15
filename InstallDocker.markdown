@@ -57,6 +57,12 @@ docker-machine restart
 ```
 sudo docker run hello-world
 ```
+If `docker version` does not work but `docker --version` works then do the following in its sequence
+```
+sudo services docker stop
+sudo services docker start
+sudo services start docker
+```
 
 ### 1.3. Uninstall
 ```
@@ -95,6 +101,12 @@ sudo systemctl start docker
 ### 2.2.2. Test installation
 ```
 sudo docker run hello-world
+```
+If `docker version` does not work but `docker --version` works then do the following in its sequence
+```
+sudo services docker stop
+sudo services docker start
+sudo services start docker
 ```
 
 ### 2.3. Uninstall
