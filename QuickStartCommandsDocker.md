@@ -42,7 +42,7 @@ docker attach <container_name>
 ```
 You can obtain container_name from `docker ps`.
 
-#### 2.2.2. Adding another process to a _running_ container
+#### 2.2.2. Adding another process to a running container
 ```
 docker exec -ti <container_name> bash
 ```
