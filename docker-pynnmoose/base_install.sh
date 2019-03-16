@@ -19,6 +19,14 @@ apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopen
 apt-get install -y python2.7 python-pip python-tk python-lxml libhdf5-serial-dev python-all-dev cython
 # for python3
 apt-get install -y python3 python3-pip python3-tk python3-lxml libhdf5-serial-dev python3-dev cython3
+# NOTE: python3.7-pip does not exist and python3-pip will install python3.6 the pip to it (confirmed using pip --version)
+# if you really want python3.7 follow the steps below
+#apt-get install curl
+#curl https://bootstrap.pypa.io/get-pip.py | python3.7
+# alternatively
+#curl https://bootstrap.pypa.io/get-pip.py | sudo -H python3.7
+# Source: https://askubuntu.com/questions/889535/how-to-install-pip-for-python-3.6-on-ubuntu-16-10
+# See also: https://lxml.de/installation.html
 
 # Install for NEURON
 apt-get install -y libx11-dev libxext-dev mpich libncurses-dev
