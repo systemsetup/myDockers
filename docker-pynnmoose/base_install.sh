@@ -8,17 +8,25 @@
 # git clone https://github.com/systemsetup/myDockers.git
 # cd docker-pyNNmoose 
 # chmod +x base_install.sh
-# bash base_install.sh
+# bash base_install.sh python2
+# bash base_install.sh python3
+# bash base_install.sh # both python2 & 3
 # NOTE: if you get an error redo "bash base_install.sh" [because of https://github.com/pypa/pip/issues/5240]
 
 # Base installations
-apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc
-
+apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
 ## python-tk is for pylab, python-lxml libhdf5-serila-dev for NWB, python-all-dev cython for NEST
-# for python2.7
-apt-get install -y python2.7 python-pip python-tk python-lxml libhdf5-serial-dev python-all-dev cython
-# for python3
-apt-get install -y python3 python3-pip python3-tk python3-lxml libhdf5-serial-dev python3-dev cython3
+case $1 in
+    (python2) apt-get install -y python2.7 python-pip python-tk python-lxml python-all-dev cython;
+              pip install --upgrade pip; # Packges for setting virtual environments
+              pip install -U pip setuptools virtualenv;;
+    (python3) apt-get install -y python3 python3-pip python3-tk python3-lxml python3-dev cython3;
+              pip3 install --upgrade pip setuptools virtualenv;;
+     (*) apt-get install -y python2.7 python-pip python-tk python-lxml python-all-dev cython;
+         apt-get install -y python3 python3-pip python3-tk python3-lxml python3-dev cython3;
+         pip install -U pip setuptools virtualenv;
+         pip3 install --upgrade pip setuptools virtualenv;;
+esac
 # NOTE: python3.7-pip does not exist and python3-pip will install python3.6 the pip to it (confirmed using pip --version)
 # if you really want python3.7 follow the steps below
 #apt-get install curl
@@ -36,10 +44,3 @@ apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev
 
 # Install for MOOSE
 apt-get install -y pkg-config libgraphviz-dev libhdf5-dev
-
-## Packges for setting virtual environments
-# for python2.7
-pip install --upgrade pip
-pip install -U pip setuptools virtualenv
-# for python3
-pip3 install --upgrade pip setuptools virtualenv
