@@ -6,11 +6,12 @@
 # apt-get -qq update
 # apt-get install -y git
 # git clone https://github.com/systemsetup/myDockers.git
-# cd 
+# cd myDockers/docker-cerebunit
 # chmod +x base_install.sh
 # bash base_install.sh python2
 # bash base_install.sh python3
 # bash base_install.sh # both python2 & 3
+# NOTE: run the script TWICE (to make sure everything is installed)
 
 # Base installations
 apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
