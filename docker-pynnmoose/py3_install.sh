@@ -128,4 +128,4 @@ deactivate
 ## Add NEST to path
 #/simulators/nest2.16/lib/python3.x/site-packages
 # Add PyNN to path
-#/simulators/pyNN-0.9.3/lib/python3.x/site-packages
+#/simulators/pyNN-0.9.4/lib/python3.x/site-packages
