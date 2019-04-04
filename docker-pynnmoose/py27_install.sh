@@ -42,12 +42,12 @@ cd src/nrnpython && python setup.py install --home=/simulators/neuron7.5
 # https://neurojustas.wordpress.com/2018/03/27/tutorial-installing-neuron-simulator-with-python-on-ubuntu-linux/
 # https://www.neuron.yale.edu/phpBB/viewtopic.php?f=6&t=3834&p=16482&hilit=MetaHocObject#p16482
 #
-## Post-Installation Path configuration
-#echo "" >> ~/.bashrc
-#echo "# Add IV and NEURON to path variable" >> ~/.bashrc
-#echo -E "export PATH=\"/simulators/neuron7.5/iv/x86_64/bin:\$PATH\"" >> ~/.bashrc
-#echo -E "export PATH=\"/simulators/neuron7.5/nrn/x86_64/bin:\$PATH\"" >> ~/.bashrc
-#source ~/.bashrc
+## Post-Installation Path configuration (**Required for running nrnivmodl command)
+echo "" >> ~/.bashrc
+echo "# Add IV and NEURON to path variable" >> ~/.bashrc
+echo -E "export PATH=\"/simulators/neuron7.5/iv/x86_64/bin:\$PATH\"" >> ~/.bashrc
+echo -E "export PATH=\"/simulators/neuron7.5/nrn/x86_64/bin:\$PATH\"" >> ~/.bashrc
+source ~/.bashrc
 ########################################################################
 
 cd / && cd simulators
