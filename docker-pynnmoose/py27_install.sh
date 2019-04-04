@@ -105,9 +105,9 @@ source /envs/py27-pyNNmoose/bin/activate
 ## Install pre-built package
 #pip install pyNN
 # Alternatively
-mkdir pyNN-0.9.3 && cd pyNN-0.9.3
+mkdir pyNN-0.9.4 && cd pyNN-0.9.4
 git clone https://github.com/NeuralEnsemble/PyNN.git
-pip install --install-option="--prefix=/simulators/pyNN-0.9.3" ./PyNN
+pip install --install-option="--prefix=/simulators/pyNN-0.9.4" ./PyNN
 #
 # NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
 #
