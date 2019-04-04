@@ -5,8 +5,7 @@
 # sudo docker run -ti ubuntu:16.04 bash
 # apt-get -qq update
 # apt-get install -y git
-# git clone https://github.com/systemsetup/myDockers.git
-# cd docker-pynnmoose 
+# git clone https://github.com/systemsetup/myDockers.git && cd myDockers/docker-pynnmoose 
 # chmod +x base_install.sh
 # bash base_install.sh python2
 # bash base_install.sh python3
