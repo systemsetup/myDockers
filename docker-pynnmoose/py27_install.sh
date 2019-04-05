@@ -11,7 +11,7 @@ virtualenv -p /usr/bin/python2.7 /envs/py27-pyNNmoose
 source /envs/py27-pyNNmoose/bin/activate
 
 # Setup environment
-pip install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant pynwb sciunit bokeh
+pip install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant pynwb sciunit bokeh pyneuroml
 pip install dask distributed --upgrade
 
 # Deactivate the activated virtualenv once python related packages are installed
