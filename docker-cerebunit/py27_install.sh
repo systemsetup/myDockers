@@ -13,6 +13,7 @@ source /envs/py27-cerebunit/bin/activate
 # Setup environment
 pip install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant pynwb sciunit bokeh
 pip install dask distributed --upgrade
+pip install git+git://github.com/BlueBrain/eFEL
 
 cd /
 mkdir simulators && cd simulators
