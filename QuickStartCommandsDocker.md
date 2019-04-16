@@ -93,12 +93,18 @@ docker run -ti -p 5006:5006 \
                <image_name>:<its_tag> bash
 ```
 
-#### 2.3.4. Serial processing
+#### 2.3.4. Running multiple notebook servers (same container)
+Let us assume you are interested in running two jupyter notebook servers in two different virtual environments, then you need to start docker as `docker run -p <host_port1>:<container_port1> -p <host_port2>:<container_port2>`. For example
+```
+docker run -p 8888:8888 -p 8889:8889 <image_name>:<its_tag> bash
+```
+
+#### 2.3.5. Serial processing
 ```
 docker run -ti <image_name>:<its_tag> bash -c "sleep 3; echo all done"
 ```
 
-#### 2.3.4. Misch.
+#### 2.3.6. Misch.
 ```
 docker run --cpu-shares
 ```
