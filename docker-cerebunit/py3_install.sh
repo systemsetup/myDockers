@@ -63,8 +63,9 @@ wget "https://github.com/nest/nest-simulator/archive/v2.16.0.tar.gz"
 # Extract them and go to the extracted folder
 tar xzf v2.16.0.tar.gz && cd nest-simulator-2.16.0
 # Preinstall configure
-# ********************************************************************************************************************* Python3 Config
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/py3_nest2.16/ -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3.6
+# *******************************************************************************************************:************** Python3 Config
+#cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/py3_nest2.16/ -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3.6 --> outdated config for specifying python version
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/py3_nest2.16/ -Dwith-python=3
 # Install
 make && make install clean
 ########################################################################
@@ -122,10 +123,10 @@ deactivate
 
 ############################# POST-INSTALL #############################
 # create installed_sims.pth
-# vi /envs/py3-cerebmodels/lib/python3.6/site-packages/installed_sims.pth
+# vi /envs/py3-cerebmodels/lib/python3.5/site-packages/installed_sims.pth
 ## Add NEURON to path
 #/simulators/py3_neuron7.5/lib/python
 ## Add NEST to path
-#/simulators/py3_nest2.16/lib/python3.6/site-packages
+#/simulators/py3_nest2.16/lib/python3.5/site-packages
 # Add PyNN to path
-#/simulators/py3_pyNN-0.9.4/lib/python3.6/site-packages
+#/simulators/py3_pyNN-0.9.4/lib/python3.5/site-packages
