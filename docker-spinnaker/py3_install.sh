@@ -8,7 +8,7 @@
 
 # Create environment for python3
 virtualenv -p /usr/bin/python3 /envs/py3-spinnaker
-source /envs/py3-spinnkaer/bin/activate
+source /envs/py3-spinnaker/bin/activate
 
 # Setup environment
 pip3 install numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant bokeh pyneuroml
