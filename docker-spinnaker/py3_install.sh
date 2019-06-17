@@ -11,8 +11,8 @@ virtualenv -p /usr/bin/python3 /envs/py3-spinnaker
 source /envs/py3-spinnaker/bin/activate
 
 # Setup environment
-pip3 install numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant bokeh pyneuroml
-pip3 install dask distributed
+pip3 install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities neo elephant bokeh pyneuroml
+pip3 install dask distributed --upgrade
 
 # Deactivate the activated virtualenv once python related packages are installed
 deactivate
