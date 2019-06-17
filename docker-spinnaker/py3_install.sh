@@ -134,8 +134,11 @@ git clone https://github.com/SpiNNakerManchester/DataSpecification.git
 git clone https://github.com/SpiNNakerManchester/spalloc.git
 git clone https://github.com/SpiNNakerManchester/SpiNNFrontEndCommon.git
 git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
+# all the above are needed to be installed pior to sPyNNaker8
 git clone https://github.com/SpiNNakerManchester/sPyNNaker8.git
-pip3 install ./SpiNNUtils ./SpiNNStorageHandlers ./SpiNNMachine ./PACMAN ./DataSpecification ./spalloc ./SpiNNFrontEndCommon ./sPyNNaker ./sPyNNaker8
+# SpiNNMan is required for installing pyNN-spiNNaker
+git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
+pip3 install ./SpiNNUtils ./SpiNNStorageHandlers ./SpiNNMachine ./PACMAN ./DataSpecification ./spalloc ./SpiNNFrontEndCommon ./sPyNNaker ./sPyNNaker8 ./SpiNNMan
 ## Install pyNN-spiNNaker
 python3 -m spynnaker8.setup-pynn
 #deactivate
