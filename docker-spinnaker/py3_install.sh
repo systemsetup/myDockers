@@ -78,7 +78,7 @@ make && make install clean
 #pip3 install pymoose
 #deactivate
 ## To Build and install from it
-#cd / && cd simulators && mkdir py_moose3.1 && cd py_moose3.1
+#cd / && cd simulators && mkdir py3_moose3.1 && cd py3_moose3.1
 #git clone https://github.com/BhallaLab/moose
 #cd moose/moose-core
 #mkdir _build && cd _build
