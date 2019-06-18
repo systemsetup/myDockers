@@ -139,8 +139,8 @@ git clone https://github.com/SpiNNakerManchester/sPyNNaker8.git
 # SpiNNMan is required for installing pyNN-spiNNaker
 git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
 pip3 install ./SpiNNUtils ./SpiNNStorageHandlers ./SpiNNMachine ./PACMAN ./DataSpecification ./spalloc ./SpiNNFrontEndCommon ./sPyNNaker ./sPyNNaker8 ./SpiNNMan
-## Install pyNN-spiNNaker
-python3 -m spynnaker8.setup-pynn
+## Install pyNN-spiNNaker NOTE: setup_pynn NOT setup-pynn (which is for pip installable/ version)
+python3 -m spynnaker8.setup_pynn
 #deactivate
 ########################################################################
 
@@ -152,6 +152,7 @@ git clone -b cli https://github.com/HumanBrainProject/hbp-neuromorphic-client.gi
 #source /envs/py3-spinnaker/bin/activate
 ## Install-pip3 install ./hbp-neuromorphic-client
 pip3 install ./hbp-neuromorphic-client
+deactivate
 ########################################################################
 
 
