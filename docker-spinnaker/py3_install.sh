@@ -142,6 +142,13 @@ pip3 install ./SpiNNUtils ./SpiNNStorageHandlers ./SpiNNMachine ./PACMAN ./DataS
 ## Install pyNN-spiNNaker NOTE: setup_pynn NOT setup-pynn (which is for pip installable/ version)
 python3 -m spynnaker8.setup_pynn
 #deactivate
+# Post-installation setup .spynnaker.cfg
+#echo "" >> ~/.spynnaker.cfg
+echo "[Machine]" >> ~/.spynnaker.cfg
+echo "machineName = 192.168.240.39" >> ~/.spynnaker.cfg
+echo "version = 3" >> ~/.spynnaker.cfg
+echo "#virtual_board = False" >> ~/.spynnaker.cfg
+#source ~/.spynnaker.cfg
 ########################################################################
 
 

@@ -116,6 +116,13 @@ pip install sPyNNaker8
 ## Install pyNN-spiNNaker NOTE: setup-pynn NOT setup_pynn (which is for github version)
 python -m spynnaker8.setup-pynn
 #deactivate
+# Post-installation setup .spynnaker.cfg
+#echo "" >> ~/.spynnaker.cfg
+echo "[Machine]" >> ~/.spynnaker.cfg
+echo "machineName = 192.168.240.39" >> ~/.spynnaker.cfg
+echo "version = 3" >> ~/.spynnaker.cfg
+echo "#virtual_board = False" >> ~/.spynnaker.cfg
+#source ~/.spynnaker.cfg
 ########################################################################
 
 
