@@ -34,5 +34,8 @@ apt-get install -y libx11-dev libxext-dev mpich libncurses-dev
 # Install for NEST
 apt-get install -y cmake autoconf automake libtool libltdl7-dev libreadline6-dev libgsl0-dev gsl-bin
 
+# For C-compilation needed for sPyNNaker8
+apt-get install -y libc6-i386 perl perl-tk libterm-readline-gnu-perl
+
 # because of https://github.com/pypa/pip/issues/5240
 # you may need to run bash base_install.sh AGAIN
