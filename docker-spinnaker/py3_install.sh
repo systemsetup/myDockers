@@ -119,13 +119,13 @@ cd / && cd simulators
 #deactivate
 ########################################################################
 
-
+cd / && cd simulators
 
 ############################# sPyNNaker8 ###############################
 source /envs/py3-spinnaker/bin/activate
 ## Install pre-built package (only for python 2)
 #pip install sPyNNaker8
-cd /repos
+mkdir spinnaker_pynn && cd spinnaker_pynn
 git clone https://github.com/SpiNNakerManchester/SpiNNUtils.git
 git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
 git clone https://github.com/SpiNNakerManchester/SpiNNMachine.git
@@ -154,12 +154,19 @@ echo "#virtual_board = False" >> ~/.spynnaker.cfg
 
 
 ####################### hbp neuromorphic cli ###########################
-#cd /repos/
+cd /repos/
 git clone -b cli https://github.com/HumanBrainProject/hbp-neuromorphic-client.git
 #source /envs/py3-spinnaker/bin/activate
 ## Install-pip3 install ./hbp-neuromorphic-client
 pip3 install ./hbp-neuromorphic-client
 deactivate
+########################################################################
+
+
+################### Setup C-environment variables ######################
+cd /simulators/spinnaker_pynn
+git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
+git clone https://github.com/SpiNNakerManchester/spinn_common.git
 ########################################################################
 
 
