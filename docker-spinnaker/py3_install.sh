@@ -166,12 +166,11 @@ deactivate
 ################### Setup C-environment variables ######################
 cd /repos/
 # NOTE the latest Version 8-2018-q4-major Linux 64-bit is not suitable
-wget "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2?revision=2cc92fb5-3e0e-402d-9197-bdfc8224d8a5?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,6-2017-q2-update"
-mv xxx 6-2017-q2-update-linux.tar.bz2
-tar -xfj 6-2017-q2-update-linux.tar.bz2
+wget -O 6-2017-q2-update-linux.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2?revision=2cc92fb5-3e0e-402d-9197-bdfc8224d8a5?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,6-2017-q2-update"
+tar xjf 6-2017-q2-update-linux.tar.bz2
 # set the path into /home/.profile or ~/.bashrc (shown here)
 echo "" >> ~/.bashrc
-echo -E "export PATH=\"$(pwd)/<install-location>/bin:\$PATH\"" >> ~/.bashrc
+echo -E "export PATH=\"$(pwd)/gcc-arm-none-eabi-6-2017-q2-update/bin:\$PATH\"" >> ~/.bashrc
 source ~/.bashrc
 #
 cd /simulators/spinnaker_pynn
@@ -188,6 +187,40 @@ echo -E "export PERL5LIB=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.bashrc
 echo "# Add ~/sPyNNaker/neural_modelling to NEURAL_MODELLING_DIRS environment variable" >> ~/.bashrc
 echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> ~/.bashrc
 source ~/.bashrc 
+########################################################################
+
+
+
+############################ Build C-code ##############################
+cd /simulators/spinnaker_pynn
+#
+cd spinnaker_tools
+source $PWD/setup
+make clean
+make # || exit $?
+cd ..
+cd spinn_common
+make clean
+make install-clean
+make # || exit $?
+make install
+cd ..
+cd SpiNNFrontEndCommon/c_common/
+cd front_end_common_lib/
+make install-clean
+cd ..
+make clean
+make # || exit $?
+make install
+cd ../..
+cd sPyNNaker/neural_modelling/
+source $PWD/setup.bash
+make clean
+make # || exit $?
+#cd ../../SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples/
+#make clean
+#make || exit $?
+#echo "completed"
 ########################################################################
 
 
