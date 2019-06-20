@@ -168,25 +168,25 @@ cd /repos/
 # NOTE the latest Version 8-2018-q4-major Linux 64-bit is not suitable
 wget -O 6-2017-q2-update-linux.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2?revision=2cc92fb5-3e0e-402d-9197-bdfc8224d8a5?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,6-2017-q2-update"
 tar xjf 6-2017-q2-update-linux.tar.bz2
-# set the path into /home/.profile or ~/.bashrc (shown here)
-echo "" >> ~/.bashrc
-echo -E "export PATH=\"$(pwd)/gcc-arm-none-eabi-6-2017-q2-update/bin:\$PATH\"" >> ~/.bashrc
-source ~/.bashrc
+# set the path into ~/.bashrc or ~/.profile (shown here)
+echo "" >> ~/.profile
+echo -E "export PATH=\"$(pwd)/gcc-arm-none-eabi-6-2017-q2-update/bin:\$PATH\"" >> ~/.profile
+#source ~/.bashrc
 #
 cd /simulators/spinnaker_pynn
 #
 git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
 git clone https://github.com/SpiNNakerManchester/spinn_common.git
-echo "" >> ~/.bashrc
-echo "# Add ~/spinnaker_tools to SPINN_DIRS environment variable" >> ~/.bashrc
-echo -E "export SPINN_DIRS=\"$(pwd)/spinnaker_tools\"" >> ~/.bashrc
-echo "# Add ~/spinnaker_tools/tools to PATH environment variable" >> ~/.bashrc
-echo -E "export PATH=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.bashrc
-echo "# Add ~/spinnaker_tools/tools to PERL5LIB environment variable" >> ~/.bashrc
-echo -E "export PERL5LIB=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.bashrc
-echo "# Add ~/sPyNNaker/neural_modelling to NEURAL_MODELLING_DIRS environment variable" >> ~/.bashrc
-echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> ~/.bashrc
-source ~/.bashrc 
+echo "" >> ~/.profile
+echo "# Add ~/spinnaker_tools to SPINN_DIRS environment variable" >> ~/.profile
+echo -E "export SPINN_DIRS=\"$(pwd)/spinnaker_tools\"" >> ~/.profile
+echo "# Add ~/spinnaker_tools/tools to PATH environment variable" >> ~/.profile
+echo -E "export PATH=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.profile
+echo "# Add ~/spinnaker_tools/tools to PERL5LIB environment variable" >> ~/.profile
+echo -E "export PERL5LIB=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.profile
+echo "# Add ~/sPyNNaker/neural_modelling to NEURAL_MODELLING_DIRS environment variable" >> ~/.profile
+echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> ~/.profile
+#source ~/.bashrc 
 ########################################################################
 
 
