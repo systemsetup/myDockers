@@ -125,6 +125,7 @@ cd / && cd simulators
 source /envs/py3-spinnaker/bin/activate
 ## Install pre-built package (only for python 2)
 #pip install sPyNNaker8
+#
 mkdir spinnaker_pynn && cd spinnaker_pynn
 git clone https://github.com/SpiNNakerManchester/SpiNNUtils.git
 git clone https://github.com/SpiNNakerManchester/SpiNNStorageHandlers.git
@@ -138,7 +139,29 @@ git clone https://github.com/SpiNNakerManchester/sPyNNaker.git
 git clone https://github.com/SpiNNakerManchester/sPyNNaker8.git
 # SpiNNMan is required for installing pyNN-spiNNaker
 git clone https://github.com/SpiNNakerManchester/SpiNNMan.git
-pip3 install ./SpiNNUtils ./SpiNNStorageHandlers ./SpiNNMachine ./PACMAN ./DataSpecification ./spalloc ./SpiNNFrontEndCommon ./sPyNNaker ./sPyNNaker8 ./SpiNNMan
+# pip installation results in packages located in /envs/py3-spinnaker/lib/python3.7/site-packages
+#pip3 install ./SpiNNUtils ./SpiNNStorageHandlers ./SpiNNMachine ./PACMAN ./DataSpecification ./spalloc ./SpiNNFrontEndCommon ./sPyNNaker ./sPyNNaker8 ./SpiNNMan
+# desired installed package location is /simulators/spinnaker_pynn/<pkg_name>
+# to do this [setup.sh](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/setup.sh)
+do_setup(){
+        cd $1 || exit $?
+        python setup.py develop --no-deps || exit $1
+    cd ..
+}
+do_setup SpiNNUtils
+do_setup SpiNNMachine
+do_setup SpiNNStorageHandlers
+do_setup SpiNNMan
+do_setup PACMAN
+do_setup DataSpecification
+do_setup spalloc
+do_setup SpiNNFrontEndCommon
+do_setup sPyNNaker
+# do_setup sPyNNaker7
+do_setup sPyNNaker8
+#do_setup sPyNNaker8NewModelTemplate
+#do_setup sPyNNakerVisualisers
+#
 ## Install pyNN-spiNNaker NOTE: setup_pynn NOT setup-pynn (which is for pip installable/ version)
 python3 -m spynnaker8.setup_pynn
 #deactivate
@@ -192,32 +215,33 @@ echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> 
 
 
 ############################ Build C-code ##############################
-#source /envs/py3-spinnaker/bin/activate
-#cd /simulators/spinnaker_pynn
+source /envs/py3-spinnaker/bin/activate
+# [automatic_make.sh](https://github.com/SpiNNakerManchester/SupportScripts/blob/master/automatic_make.sh)
+cd /simulators/spinnaker_pynn
 #
-#cd spinnaker_tools
-#source $PWD/setup
-#make clean
-#make # || exit $?
-#cd ..
-#cd spinn_common
-#make clean
-#make install-clean
-#make # || exit $?
-#make install
-#cd ..
-#cd SpiNNFrontEndCommon/c_common/
-#cd front_end_common_lib/
-#make install-clean
-#cd ..
-#make clean
-#make # || exit $?
-#make install
-#cd ../..
-#cd sPyNNaker/neural_modelling/
-#source $PWD/setup.bash
-#make clean
-#make # || exit $?
+cd spinnaker_tools
+source $PWD/setup
+make clean
+make # || exit $?
+cd ..
+cd spinn_common
+make clean
+make install-clean
+make # || exit $?
+make install
+cd ..
+cd SpiNNFrontEndCommon/c_common/
+cd front_end_common_lib/
+make install-clean
+cd ..
+make clean
+make # || exit $?
+make install
+cd ../..
+cd sPyNNaker/neural_modelling/
+source $PWD/setup.bash
+make clean
+make # || exit $?
 #cd ../../SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples/
 #make clean
 #make || exit $?
