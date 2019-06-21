@@ -209,7 +209,7 @@ echo "# Add ~/spinnaker_tools/tools to PERL5LIB environment variable" >> ~/.bash
 echo -E "export PERL5LIB=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.bashrc
 echo "# Add ~/sPyNNaker/neural_modelling to NEURAL_MODELLING_DIRS environment variable" >> ~/.bashrc
 echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> ~/.bashrc
-#source ~/.bashrc 
+source ~/.bashrc 
 ########################################################################
 
 
