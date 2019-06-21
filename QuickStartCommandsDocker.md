@@ -154,4 +154,24 @@ alternatively,
  - `docker rm <container_name>`
  - `docker rmi $(docker images <image_name>:<its_tag>)`
  - `docker rm $(docker ps -a -q)` to remove all containers.
+ 
+ The more often you run your docker image(s), regardless of deleting the images that may not be wanted disk usage will pile up. To see disk usage
+ ```
+ docker system df
+ ```
+ To make a deep clean of all the past container (including those you have not committed) the command is
+ ```
+ docker system prune
+ ```
+ However, **this is not recommended** because some container (non committed) might be of use.
+ 
+ To get the list of all the containers (that were not deleted)
+ ```
+ docker container ls -a
+ ```
+ Then depending on which container to delete you can selectively delete containers as
+ ```
+ docker container rm <container_1> <container_2> <container_3> <container_4>
+ ```
+ ```
 
