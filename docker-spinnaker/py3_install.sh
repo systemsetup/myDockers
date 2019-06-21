@@ -192,6 +192,7 @@ echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> 
 
 
 ############################ Build C-code ##############################
+#source /envs/py3-spinnaker/bin/activate
 #cd /simulators/spinnaker_pynn
 #
 #cd spinnaker_tools
