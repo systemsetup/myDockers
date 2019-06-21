@@ -169,8 +169,8 @@ cd /repos/
 wget -O 6-2017-q2-update-linux.tar.bz2 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2?revision=2cc92fb5-3e0e-402d-9197-bdfc8224d8a5?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,6-2017-q2-update"
 tar xjf 6-2017-q2-update-linux.tar.bz2
 # set the path into ~/.bashrc or ~/.profile (shown here)
-echo "" >> ~/.profile
-echo -E "export PATH=\"$(pwd)/gcc-arm-none-eabi-6-2017-q2-update/bin:\$PATH\"" >> ~/.profile
+echo "" >> ~/.bashrc
+echo -E "export PATH=\"\$PATH:$(pwd)/gcc-arm-none-eabi-6-2017-q2-update/bin\"" >> ~/.bashrc
 #source ~/.bashrc
 #
 cd /simulators/spinnaker_pynn
@@ -192,31 +192,31 @@ echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> 
 
 
 ############################ Build C-code ##############################
-cd /simulators/spinnaker_pynn
+#cd /simulators/spinnaker_pynn
 #
-cd spinnaker_tools
-source $PWD/setup
-make clean
-make # || exit $?
-cd ..
-cd spinn_common
-make clean
-make install-clean
-make # || exit $?
-make install
-cd ..
-cd SpiNNFrontEndCommon/c_common/
-cd front_end_common_lib/
-make install-clean
-cd ..
-make clean
-make # || exit $?
-make install
-cd ../..
-cd sPyNNaker/neural_modelling/
-source $PWD/setup.bash
-make clean
-make # || exit $?
+#cd spinnaker_tools
+#source $PWD/setup
+#make clean
+#make # || exit $?
+#cd ..
+#cd spinn_common
+#make clean
+#make install-clean
+#make # || exit $?
+#make install
+#cd ..
+#cd SpiNNFrontEndCommon/c_common/
+#cd front_end_common_lib/
+#make install-clean
+#cd ..
+#make clean
+#make # || exit $?
+#make install
+#cd ../..
+#cd sPyNNaker/neural_modelling/
+#source $PWD/setup.bash
+#make clean
+#make # || exit $?
 #cd ../../SpiNNakerGraphFrontEnd/spinnaker_graph_front_end/examples/
 #make clean
 #make || exit $?
