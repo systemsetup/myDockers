@@ -177,15 +177,15 @@ cd /simulators/spinnaker_pynn
 #
 git clone https://github.com/SpiNNakerManchester/spinnaker_tools.git
 git clone https://github.com/SpiNNakerManchester/spinn_common.git
-echo "" >> ~/.profile
-echo "# Add ~/spinnaker_tools to SPINN_DIRS environment variable" >> ~/.profile
-echo -E "export SPINN_DIRS=\"$(pwd)/spinnaker_tools\"" >> ~/.profile
-echo "# Add ~/spinnaker_tools/tools to PATH environment variable" >> ~/.profile
-echo -E "export PATH=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.profile
-echo "# Add ~/spinnaker_tools/tools to PERL5LIB environment variable" >> ~/.profile
-echo -E "export PERL5LIB=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.profile
-echo "# Add ~/sPyNNaker/neural_modelling to NEURAL_MODELLING_DIRS environment variable" >> ~/.profile
-echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> ~/.profile
+echo "" >> ~/.bashrc
+echo "# Add ~/spinnaker_tools to SPINN_DIRS environment variable" >> ~/.bashrc
+echo -E "export SPINN_DIRS=\"$(pwd)/spinnaker_tools\"" >> ~/.bashrc
+echo "# Add ~/spinnaker_tools/tools to PATH environment variable" >> ~/.bashrc
+echo -E "export PATH=\"\$PATH:$(pwd)/spinnaker_tools/tools\"" >> ~/.bashrc
+echo "# Add ~/spinnaker_tools/tools to PERL5LIB environment variable" >> ~/.bashrc
+echo -E "export PERL5LIB=\"$(pwd)/spinnaker_tools/tools\"" >> ~/.bashrc
+echo "# Add ~/sPyNNaker/neural_modelling to NEURAL_MODELLING_DIRS environment variable" >> ~/.bashrc
+echo -E "export NEURAL_MODELLING_DIRS=\"$(pwd)/sPyNNaker/neural_modelling\"" >> ~/.bashrc
 #source ~/.bashrc 
 ########################################################################
 
