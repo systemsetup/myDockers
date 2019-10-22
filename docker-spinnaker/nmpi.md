@@ -13,5 +13,5 @@ job = c.get_job(job_id)
  # Visualize
  ```
  import pprint as pp
- pp.print(job)
+ pp.pprint(job)
  ```
