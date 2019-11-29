@@ -92,13 +92,24 @@ sudo dnf install docker-ce
 ```
 If asked to accept GPG key, verify that it matches `060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35`
 
-### 2.2.1. Start Docker
+**Additional step for Fedora 31**
+```
+sudo vi sudo gedit /etc/default/grub
+```
+Then append this `systemd.unified_cgroup_hierarchy=0` to `GRUB_CMDLINE_LINUX`.
+Follow this with
+```
+sudo grub2-mkconfig
+```
+and reboot.
+
+#### 2.2.1. Start Docker
 Docker is installed but not started. That is, `docker` group is created but no users are added to the group.
 ```
 sudo systemctl start docker
 ```
 
-### 2.2.2. Test installation
+#### 2.2.2. Test installation
 ```
 sudo docker run hello-world
 ```
