@@ -173,5 +173,26 @@ alternatively,
  ```
  docker container rm <container_1> <container_2> <container_3> <container_4>
  ```
+ 
+  ## 6. Saving an image or container (exporting)
+  ### 6.1. Saving and exporting
+  To save an image do
  ```
-
+ docker save -o path/to/name.tar <image name>:<its tag>
+ ```
+ However, if you encounter ` Error response from daemon` you may just save (export) the container instead by
+ ```
+ docker export --output="/path/to/name.tar" <container_name>
+ ```
+ Note, the value for output when using `export` is a string.
+ 
+ ### 6.2. Loading and importing
+ To load the saved image
+ ```
+ docker load -i path/to/name.tar
+ ```
+ And to import a container
+ ```
+ docker import /path/to/name.tar
+ ```
+ Note that the supported extensions are, `.tar`, `.tar.gz`, `.tgz`, `.bzip`, `.tar.xz`, or `.txz`.
