@@ -25,7 +25,7 @@ sudo usermod -aG docker <username>
 - Fedora
 ```
 sudo groupadd docker
-sudo gpasswd -a ${USER}
+sudo usermod -aG docker <username>
 ```
 
 Finally, assuming that you have docker images collected using `docker pull <image_name>:<its_tag>`
