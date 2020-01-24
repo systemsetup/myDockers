@@ -196,3 +196,9 @@ alternatively,
  docker import /path/to/name.tar
  ```
  Note that the supported extensions are, `.tar`, `.tar.gz`, `.tgz`, `.bzip`, `.tar.xz`, or `.txz`.
+ 
+ ### 6.3. Uploading an image to Docker Hub
+ ```
+ docker tag local_image:its_tag docker_hub_username/repo_name:some_tag
+ docker push docker_hub_username/repo_name:some_tag
+ ```
