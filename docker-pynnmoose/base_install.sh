@@ -13,7 +13,7 @@
 # NOTE: if you get an error redo "bash base_install.sh" [because of https://github.com/pypa/pip/issues/5240]
 
 # Base installations
-apt-get install -y wget bzip2 vim tmux lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
+apt-get install -y wget bzip2 vim tmux tree lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
 ## python-tk is for pylab, python-lxml libhdf5-serila-dev for NWB, python-all-dev cython for NEST
 case $1 in
     (python2) apt-get install -y python2.7 python-pip python-tk python-lxml python-all-dev cython;
