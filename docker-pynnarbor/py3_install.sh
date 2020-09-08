@@ -99,6 +99,7 @@ cd / && cd simulators
 
 ################################ PyNN #################################
 source /envs/py3-pyNNarbor/bin/activate
+pip3 install lazyarray
 ## Install pre-built package
 #pip3 install pyNN
 # Alternatively
