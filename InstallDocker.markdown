@@ -160,6 +160,31 @@ sudo systemctl enable docker
 ```
 NOTE: You might need to reboot the system `sudo systemctl reboot`.
 
+## 4. For Windows
+
+First download the stable `.exe` file
+
+https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe
+
+from https://store.docker.com/editions/community/docker-ce-desktop-windows
+
+
+### 4.1. Install Docker CE
+Double-click `Docker for Windows Installer.exe`
+
+
+### 4.2. Start Docker
+Double-click `Docker for Windows`. This should initiate a whale in the status bar.
+
+### 4.3. Run Docker
+Open PowerShell (my preferance)
+```
+docker version
+docker run hello-world
+```
+
+Source https://docs.docker.com/docker-for-windows/install/
+
 
 ## 1A. For Ubuntu (alternative method)
 
