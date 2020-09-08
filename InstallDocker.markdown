@@ -128,31 +128,37 @@ sudo rm -rf /var/lib/docker
 
 Source https://docs.docker.com/install/linux/docker-ce/fedora/
 
+## 3. [For Fedora 32 onwards](https://fedoramagazine.org/docker-and-fedora-32)
 
-## 3. For Windows
+This is a two stage process where you must first setup Docker repository and then install Docker from it.
 
-First download the stable `.exe` file
-
-https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe
-
-from https://store.docker.com/editions/community/docker-ce-desktop-windows
-
-
-### 3.1. Install Docker CE
-Double-click `Docker for Windows Installer.exe`
-
-
-### 3.2. Start Docker
-Double-click `Docker for Windows`. This should initiate a whale in the status bar.
-
-### 3.3. Run Docker
-Open PowerShell (my preferance)
+If docker is alread installed remove it with the following commands
 ```
-docker version
-docker run hello-world
+sudo dnf remove docker-*
+sudo dnf config-manager --disable docker-*
 ```
 
-Source https://docs.docker.com/docker-for-windows/install/
+### 3.1. Enable old CGroups
+```
+sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+```
+
+### 3.2. Whitelist docker in firewall
+```
+sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
+```
+
+### 3.3. Install Moby and docker-compose
+```
+sudo dnf install moby-engine docker-compose"
+```
+
+#### 3.3.1. Enable Docker
+```
+sudo systemctl enable docker
+```
+NOTE: You might need to reboot the system `sudo systemctl reboot`.
 
 
 ## 1A. For Ubuntu (alternative method)
