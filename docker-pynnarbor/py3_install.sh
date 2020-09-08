@@ -104,7 +104,7 @@ source /envs/py3-pyNNarbor/bin/activate
 # Alternatively
 mkdir pyNN-arbor && cd pyNN-arbor
 git clone --single-branch --branch mc_arbor https://github.com/myHBPwork/PyNN.git
-pip3 install --install-option="--prefix=/simulators/pyNN-mc-arbor" ./PyNN
+pip3 install --install-option="--prefix=/simulators/pyNN-arbor" ./PyNN
 #
 # NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
 #
