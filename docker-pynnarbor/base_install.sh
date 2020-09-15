@@ -1,8 +1,8 @@
 #!/bin/sh
-# script for setting up docker based on ubuntu:16.04
+# script for setting up docker based on ubuntu:20.04
 # run this script after:
-# sudo docker pull ubuntu:16.04
-# sudo docker run -ti ubuntu:16.04 bash
+# sudo docker pull ubuntu:20.04
+# sudo docker run -ti ubuntu:20.04 bash
 # apt-get -qq update
 # apt-get install -y git
 # git clone https://github.com/systemsetup/myDockers.git && cd myDockers/docker-pynnmoose 
