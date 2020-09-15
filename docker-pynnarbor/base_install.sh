@@ -13,8 +13,8 @@
 # Base installations
 apt-get install -y wget bzip2 vim tmux tree lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
 ## python-tk is for pylab, python-lxml libhdf5-serila-dev for NWB, python-all-dev cython for NEST
-apt-get install -y python3 python3-pip python3-tk python3-lxml python3-dev cython3;
-pip3 install --upgrade pip setuptools virtualenv;;
+apt-get install -y python3 python3-pip python3-tk python3-lxml python3-dev cython3
+pip3 install --upgrade pip setuptools virtualenv
 
 # NOTE: python3.7-pip does not exist and python3-pip will install python3.6 the pip to it (confirmed using pip --version)
 # if you really want python3.7 follow the steps below
