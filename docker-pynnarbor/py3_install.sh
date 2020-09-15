@@ -107,10 +107,10 @@ pip3 install lazyarray
 ## Install pre-built package
 #pip3 install pyNN
 # Alternatively
-mkdir pyNN-arbor && cd pyNN-arbor
+mkdir pyNNarbor && cd pyNNarbor
 git clone --single-branch --branch mc https://github.com/myHBPwork/PyNN.git
 #pip3 install --install-option="--prefix=/simulators/pyNN-arbor" ./PyNN
-pip3 install --target /simulators/pyNN-arbor ./PyNN
+pip3 install --target /simulators/pyNNarbor ./PyNN
 #
 # NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
 #
@@ -127,4 +127,4 @@ deactivate
 ## Add NEST to path
 #/simulators/nest2.20/lib/python3.x/site-packages
 # Add PyNN to path
-#/simulators/pyNN-arbor/lib/python3.x/site-packages
+#/simulators/pyNNarbor/lib/python3.x/site-packages
