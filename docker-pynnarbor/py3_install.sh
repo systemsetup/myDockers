@@ -95,7 +95,7 @@ make && make install clean
 source /envs/py3-pyNNarbor/bin/activate
 #pip3 install arbor
 # dev version
-pip3 install git+https://githut.com/arbor-sim/arbor.git
+pip3 install git+https://github.com/arbor-sim/arbor.git
 deactivate
 ########################################################################
 
