@@ -109,7 +109,8 @@ pip3 install lazyarray
 # Alternatively
 mkdir pyNN-arbor && cd pyNN-arbor
 git clone --single-branch --branch mc https://github.com/myHBPwork/PyNN.git
-pip3 install --install-option="--prefix=/simulators/pyNN-arbor" ./PyNN
+#pip3 install --install-option="--prefix=/simulators/pyNN-arbor" ./PyNN
+pip3 install --target /simulators/pyNN-arbor ./PyNN
 #
 # NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
 #
