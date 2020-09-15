@@ -110,7 +110,8 @@ pip3 install lazyarray
 mkdir pyNNarbor && cd pyNNarbor
 git clone --single-branch --branch mc https://github.com/myHBPwork/PyNN.git
 #pip3 install --install-option="--prefix=/simulators/pyNNarbor" ./PyNN
-pip3 install --target /simulators/pyNNarbor ./PyNN
+#pip3 install --target /simulators/pyNNarbor ./PyNN
+pip3 install ./PyNN
 #
 # NOTE: it is recommended to run the command 'nrnivmodl' after PyNN install
 #
