@@ -1,5 +1,5 @@
 #!/bin/sh
-# script for setting up docker based on ubuntu:16.04
+# script for setting up docker based on ubuntu:20.04
 # run this script after:
 # base_install.sh
 # to run this script
@@ -23,48 +23,52 @@ deactivate
 cd / && mkdir simulators && cd simulators
 
 ############################### NEURON ##################################
-# Make installation directory go there and make two directories for installing the extracted packages
-mkdir neuron7.5 && cd neuron7.5 && mkdir iv && mkdir nrn
-# Download installation package in the created installation root directory
-wget "http://www.neuron.yale.edu/ftp/neuron/versions/v7.5/nrn-7.5.tar.gz"
-wget "http://www.neuron.yale.edu/ftp/neuron/versions/v7.5/iv-19.tar.gz"
-# Extract them
-tar xzf nrn-7.5.tar.gz && tar xzf iv-19.tar.gz
-# Preinstall configure
-cd iv-19 && ./configure --prefix='/simulators/neuron7.5/iv'
-make && make install clean
-# Do the same for the other extracted package
-cd .. && cd nrn-7.5
-# ********************************************************************************************************************* Python3 Config
-./configure --prefix='/simulators/neuron7.5/nrn' --with-pyexe=python3 --with-nrnpython --with-paranrn --with-iv --disable-rx3d
-make && make install clean
-# Finally Install
-cd src/nrnpython && python3 setup.py install --home=/simulators/neuron7.5
-#
-# NOTE: For v7.5 ignore h3class.py error
-# https://neurojustas.wordpress.com/2018/03/27/tutorial-installing-neuron-simulator-with-python-on-ubuntu-linux/
-# https://www.neuron.yale.edu/phpBB/viewtopic.php?f=6&t=3834&p=16482&hilit=MetaHocObject#p16482
-#
+## Make installation directory go there and make two directories for installing the extracted packages
+#mkdir neuron7.6.7 && cd neuron7.6.7 && mkdir iv && mkdir nrn
+## Download installation package in the created installation root directory
+#wget "http://www.neuron.yale.edu/ftp/neuron/versions/v7.6.7/nrn-7.6.7.tar.gz"
+#wget "http://www.neuron.yale.edu/ftp/neuron/versions/v7.6.7/iv-19.tar.gz"
+## Extract them
+#tar xzf nrn-7.6.7.tar.gz && tar xzf iv-19.tar.gz
+## Preinstall configure
+#cd iv-19 && ./configure --prefix='/simulators/neuron7.6.7/iv'
+#make && make install clean
+## Do the same for the other extracted package
+#cd .. && cd nrn-7.6.7
+## ********************************************************************************************************************* Python3 Config
+#./configure --prefix='/simulators/neuron7.6.7/nrn' --with-pyexe=python3 --with-nrnpython --with-paranrn --with-iv --disable-rx3d
+#make && make install clean
+## Finally Install
+#cd src/nrnpython && python3 setup.py install --home=/simulators/neuron7.6.7
+##
+## NOTE: For v7.5 ignore h3class.py error
+## https://neurojustas.wordpress.com/2018/03/27/tutorial-installing-neuron-simulator-with-python-on-ubuntu-linux/
+## https://www.neuron.yale.edu/phpBB/viewtopic.php?f=6&t=3834&p=16482&hilit=MetaHocObject#p16482
+##
 ## Post-Installation Path configuration (**Required for running nrnivmodl command)
-echo "" >> ~/.bashrc
-echo "# Add IV and NEURON to path variable" >> ~/.bashrc
-echo -E "export PATH=\"/simulators/neuron7.5/iv/x86_64/bin:\$PATH\"" >> ~/.bashrc
-echo -E "export PATH=\"/simulators/neuron7.5/nrn/x86_64/bin:\$PATH\"" >> ~/.bashrc
-source ~/.bashrc
+#echo "" >> ~/.bashrc
+#echo "# Add IV and NEURON to path variable" >> ~/.bashrc
+#echo -E "export PATH=\"/simulators/neuron7.6.7/iv/x86_64/bin:\$PATH\"" >> ~/.bashrc
+#echo -E "export PATH=\"/simulators/neuron7.6.7/nrn/x86_64/bin:\$PATH\"" >> ~/.bashrc
+#source ~/.bashrc
+########################### ALTERNATIVELY ##############################
+source /envs/py3-pyNNarbor/bin/activate
+pip3 install neuron
+deactivate
 ########################################################################
 
 cd / && cd simulators
 
 ################################ NEST ##################################
 # Make installation directory and go there
-mkdir nest2.16 && cd nest2.16
+mkdir nest2.20 && cd nest2.20
 # Download installation package in the created installation root directory
-wget "https://github.com/nest/nest-simulator/archive/v2.16.0.tar.gz"
+wget "https://github.com/nest/nest-simulator/archive/v2.20.0.tar.gz"
 # Extract them and go to the extracted folder
-tar xzf v2.16.0.tar.gz && cd nest-simulator-2.16.0
+tar xzf v2.20.0.tar.gz && cd nest-simulator-2.20.0
 # Preinstall configure
 # ********************************************************************************************************************* Python3 Config
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/nest2.16/ -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3.6
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/simulators/nest2.20/ -DPYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3.8
 # Install
 make && make install clean
 ########################################################################
@@ -118,8 +122,8 @@ deactivate
 # create installed_sims.pth
 # vi /envs/py3-pyNNarbor/lib/python3.x/site-packages/installed_sims.pth
 ## Add NEURON to path
-#/simulators/neuron7.5/lib/python
+#/simulators/neuron7.6.7/lib/python
 ## Add NEST to path
-#/simulators/nest2.16/lib/python3.x/site-packages
+#/simulators/nest2.20/lib/python3.x/site-packages
 # Add PyNN to path
 #/simulators/pyNN-arbor/lib/python3.x/site-packages
