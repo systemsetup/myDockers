@@ -132,4 +132,4 @@ deactivate
 ## Add NEST to path
 #/simulators/nest2.20/lib/python3.x/site-packages
 # Add PyNN to path
-#/simulators/cerebmodels/lib/python3.x/site-packages
+#/simulators/py3_pyNN/lib/python3.x/site-packages
