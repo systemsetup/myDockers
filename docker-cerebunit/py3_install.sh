@@ -126,10 +126,10 @@ deactivate
 
 ############################# POST-INSTALL #############################
 # create installed_sims.pth
-# vi /envs/py3-pyNNarbor/lib/python3.x/site-packages/installed_sims.pth
+# vi /envs/py3-cerebmodels/lib/python3.x/site-packages/installed_sims.pth
 ## Add NEURON to path
 #/simulators/neuron7.6.7/lib/python
 ## Add NEST to path
 #/simulators/nest2.20/lib/python3.x/site-packages
 # Add PyNN to path
-#/simulators/pyNNarbor/lib/python3.x/site-packages
+#/simulators/cerebmodels/lib/python3.x/site-packages
