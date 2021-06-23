@@ -11,7 +11,7 @@ virtualenv -p /usr/bin/python3 /envs/py3-cerebmodels
 source /envs/py3-cerebmodels/bin/activate
 
 # Setup environment
-pip3 install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities efel neo elephant pynwb sciunit bokeh pyneuroml
+pip3 install -U numpy scipy matplotlib pandas mpi4py ipython jupyter quantities efel neo elephant pynwb sciunit bokeh pyneuroml requests
 pip3 install dask distributed --upgrade
 
 # Deactivate the activated virtualenv once python related packages are installed
