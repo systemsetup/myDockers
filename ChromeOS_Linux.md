@@ -50,6 +50,16 @@ ln -s /opt/Zotero_linux-x86_64/zotero /home/<username>/zotero
 ```
 Then, everytime you open the terminal (you will be in `/home/<username>`) to run the desired executable just do `bash idea` or `bash zotero`.
 
+## [Leiningen](https://leiningen.org/)
+```
+sudo apt install default-jdk
+java -version
+```
+Until recently the [Leiningen website](https://leiningen.org/) used to explicitly recommend OpenJDK-8 (`sudo apt install openjdk-8-jdk`) but now no recommendations regarding the version of OpenJDK is given.
+```
+sudo apt install leiningen
+```
+
 ## Other Softwares
 ```
 sudo apt install -y git kile inkscape gimp
