@@ -17,7 +17,7 @@ sudo snap install intellij-idea-community --classic
 After downloading it (default browser download location is `My files/Downloads`) drag and drop the file (usually of the form `ideaIC-20xx.y.z.tar.gz`) or copy the files into `Linux files` (`My files/Linux files`).
 Then,
 ```
-sudo tar -xzf ideaIU.tar.gz -C /opt
+sudo tar -xzf ideaIC-20xx.y.z.tar.gz -C /opt
 ```
 This automatically creates `/opt` directory and it is the [recommended location.](https://www.jetbrains.com/help/idea/installation-guide.html#standalone)
 Go to the extracted location
@@ -40,6 +40,15 @@ Go to the extracted location
 cd /opt/Zotero_linux-x86_64/
 ```
 **To start Zotero do `bash zotero`**
+
+### Symbolic link in the root directory to the executables
+
+To avoid repeatedly typing `cd /opt/<directory-name-of-executatble>` create a symbolic link in the root `/home/<username>` as follows
+```
+ln -s /opt/idea-IC-123.4567.89/bin/idea.sh /home/<username>/idea
+ln -s /opt/Zotero_linux-x86_64/zotero /home/<username>/zotero
+```
+Then, everytime you open the terminal (you will be in `/home/<username>`) to run the desired executable just do `bash idea` or `bash zotero`.
 
 ## Other Softwares
 ```
