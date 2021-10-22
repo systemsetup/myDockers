@@ -62,5 +62,9 @@ sudo apt install leiningen
 
 ## Other Softwares
 ```
-sudo apt install -y git kate kile inkscape gimp okular okular-extra-backends maxima wxmaxima
+sudo apt install -y git kate inkscape gimp okular okular-extra-backends maxima wxmaxima
+```
+And since this is a large download
+```
+sudo apt install -y texlive-full kile
 ```
