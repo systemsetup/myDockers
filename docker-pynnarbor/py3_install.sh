@@ -53,7 +53,7 @@ cd / && mkdir simulators && cd simulators
 #source ~/.bashrc
 ########################### ALTERNATIVELY ##############################
 source /envs/py3-pyNNarbor/bin/activate
-pip3 install neuron
+pip3 install neuron==7.8.2 # branch is based on mc-branch that does not support >=8.0.0
 deactivate
 ########################################################################
 
