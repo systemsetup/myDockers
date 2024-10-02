@@ -197,7 +197,7 @@ lsb_release -cs
 
 This is a two stage process where you must first setup Docker repository and then install Docker from it.
 
-### 2A.1.Setup Docker repository, then Install
+### 1A.1.Setup Docker repository, then Install
 First
 ```
 sudo apt-get update
@@ -216,7 +216,7 @@ sudo apt-get install -y docker-engine
 sudo systemctl status docker
 ```
 
-### 2A.2. Uninstall
+### 1A.2. Uninstall
 ```
 sudo apt-get remove docker docker-engine
 sudo apt-get purge docker-ce
@@ -224,3 +224,15 @@ sudo rm -rf /var/lib/docker
 ```
 
 Source https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+## 5. Add user permission
+First, add the user to the `docker` group
+```
+sudo groupadd docker
+sudo usermod -aG docker <user-name>
+```
+Then, enter this group
+```
+newgrp docker
+```
+Now without sudo the `<user-name>` should be able to run `docker run hello-world`. Note that on reboot you should not need to type in the commands to enter `docker` group.
