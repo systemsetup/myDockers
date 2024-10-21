@@ -11,12 +11,24 @@
 # NOTE: if you get an error redo "bash base_install.sh" [because of https://github.com/pypa/pip/issues/5240]
 
 # Base installations
-apt install -y wget bzip2 vim tmux tree lsof build-essential checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
-## python-tk is for pylab, python-lxml libhdf5-serila-dev for NWB, python-all-dev cython for NEST
-apt install -y python3 python3-pip python3-setuptools python3-virtualenv python3-tk python3-lxml python3-dev cython3
+apt install -y wget bzip2 vim tmux tree lsof checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
+
+# Install for ANNarchy
+apt install -y build-essential clang python3 python3-pip python3-setuptools python3-virtualenv python3-tk python3-lxml python3-dev cython3
 apt install --upgrade pip
 
 # Check installed version
-apt list python3
+apt list python3 g++ gcc clang make python3-setuptools cython3
+# alternatively
+# apt show python3 g++ gcc clang make python3-setuptools cython3
 
-# Install for ANNarchy
+#gcc --version
+#clang --version
+
+# Function to check versions: https://unix.stackexchange.com/a/567537
+version_greater_equal()
+{
+    printf '%s\n%s\n' "$2" "$1" | sort --check=quiet --version-sort
+}
+
+# gcc --version && version_greater_equal "${gcc_version}" 7.4 || echo "need 7.4 or above" && echo "upgrade" && apt install -y --upgrade gcc
