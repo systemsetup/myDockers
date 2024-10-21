@@ -84,6 +84,10 @@ docker run -ti -p 8888:8888 \
                -w /path/to/container/directory \
                <image_name>:<its_tag> bash
 ```
+and then
+```
+jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+```
 
 #### 2.3.3. Run Bokeh (default port)
 ```
