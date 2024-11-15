@@ -37,10 +37,11 @@ source /envs/brian2/bin/activate
 
 # Install packages
 pip install numpy sympy scipy matplotlib Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml
-pip install blosc
+# required packges to run CBGTC
+pip install blosc seaborn matlab
 
 # Install Brian2
-pip install brian2
+pip install brian2 matlab # matlabengine requires MATLAB licence
 
 # Deactivate from current environment
 deactivate
