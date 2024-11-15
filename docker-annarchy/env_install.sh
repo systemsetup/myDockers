@@ -6,7 +6,7 @@
 # chmod +x env_install.sh
 # bash env_install.sh
 
-# Create environment for python3
+# Create environment for ANNarchy
 virtualenv -p /usr/bin/python3 /envs/annarchy4.8.1
 source /envs/annarchy4.8.1/bin/activate
 
@@ -30,3 +30,17 @@ pip install dask distributed --upgrade
 
 # Deactivate the activated virtualenv once python related packages are installed
 deactivate
+
+# Create environment for Brian2
+virtualenv -p /usr/bin/python3 /envs/brian2
+source /envs/brian2/bin/activate
+
+# Install packages
+pip install numpy sympy scipy matplotlib Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml
+
+# Install Brian2
+pip install brian2
+
+# Deactivate from current environment
+deactivate
+
