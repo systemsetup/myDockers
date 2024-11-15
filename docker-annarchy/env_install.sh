@@ -37,6 +37,7 @@ source /envs/brian2/bin/activate
 
 # Install packages
 pip install numpy sympy scipy matplotlib Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml
+pip install blosc
 
 # Install Brian2
 pip install brian2
