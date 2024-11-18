@@ -1,7 +1,7 @@
 # Install and Setup for DockerCE (community edition)
 Below are the installations steps/setup for Ubuntu, Fedora and Windows.
 
-## 1. For Ubuntu
+## 1. For [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
 _If this does not work, see bottom for an alternative method_
 
@@ -15,30 +15,29 @@ This is a two stage process where you must first setup Docker repository and the
 ### 1.1. Setup Docker repository
 First
 ```
-sudo apt-get update
-sudo apt-get -y install apt-transport-https \
-                        ca-certificates \
-                        curl \
-                        software-properties-common
+sudo apt update
+sudo apt install ca-certificates curl
 ```
 
-Then sdd Docker's official GPG key
+Then add Docker's official GPG key
 ```
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
 ```
 
 Finally, setup appropriate Docker respository
 ```
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
 ### 1.2. Install Docker CE
 ```
-sudo apt-get update
-sudo apt-get -y install docker-ce
+sudo apt update
+sudo apt -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
 ### 1.2.1. Start Docker
