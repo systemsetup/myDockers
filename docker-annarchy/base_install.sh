@@ -15,7 +15,7 @@
 apt install -y wget bzip2 vim tmux tree lsof checkinstall libopenmpi-dev openmpi-bin openmpi-doc libhdf5-serial-dev
 
 # Install for ANNarchy
-apt install -y build-essential clang python3 python3-pip python3-setuptools python3-virtualenv python3-tk python3-lxml python3-dev cython3
+apt install -y build-essential clang cmake python3 python3-pip python3-setuptools python3-virtualenv python3-tk python3-lxml python3-dev cython3
 apt install --upgrade pip
 
 # Check installed version
