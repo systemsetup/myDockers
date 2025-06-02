@@ -19,12 +19,13 @@ apt install -y build-essential clang python3 python3-pip python3-setuptools pyth
 apt install --upgrade pip
 
 # Check installed version
-apt list python3 g++ gcc clang make python3-setuptools cython3
+apt list python3 g++ gcc clang cmake make python3-setuptools cython3
 # alternatively
 # apt show python3 g++ gcc clang make python3-setuptools cython3
 
 #gcc --version
 #clang --version
+#cmake --version
 
 # Function to check versions: https://unix.stackexchange.com/a/567537
 version_greater_equal()
