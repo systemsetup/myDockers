@@ -1,9 +1,10 @@
 #!/bin/sh
 # script for setting up docker based on ubuntu:24.10
 # run this script after:
-# docker pull ubuntu:24.10
-# docker run -ti ubuntu:24.10 bash
+# docker pull ubuntu:25.10
+# docker run -ti ubuntu:25.10 bash
 # apt -qq update
+# apt upgrade
 # apt install -y git
 # git clone https://github.com/systemsetup/myDockers.git && cd myDockers/docker-annarchy 
 # chmod +x base_install.sh
