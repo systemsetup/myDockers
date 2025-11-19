@@ -25,7 +25,7 @@ pip install ANNarchy
 # pip install git+https://github.com/ANNarchy/ANNarchy.git@master
 
 # Additional packages that can come handy
-pip install -U Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml
+pip install -U Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml scikit-learn PyWavelets
 pip install dask distributed --upgrade
 
 # Deactivate the activated virtualenv once python related packages are installed
