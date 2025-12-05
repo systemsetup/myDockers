@@ -7,8 +7,8 @@
 # bash env_install.sh
 
 # Create environment for ANNarchy
-virtualenv -p /usr/bin/python3 /envs/annarchy4.8.1
-source /envs/annarchy4.8.1/bin/activate
+virtualenv -p /usr/bin/python3 /envs/annarchy
+source /envs/annarchy/bin/activate
 
 # Required packages https://annarchy.github.io/Installation.html
 pip install "numpy>=1.21" "sympy>=1.11" "scipy>=1.9" "matplotlib>=3.0" "tqdm>=4.60"
