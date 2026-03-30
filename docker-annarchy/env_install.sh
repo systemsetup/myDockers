@@ -26,7 +26,7 @@ pip install ANNarchy
 
 # Additional packages that can come handy
 pip install -U Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml scikit-learn PyWavelets
-pip install dask distributed --upgrade
+pip install blosc networkx dask distributed --upgrade
 
 # Deactivate the activated virtualenv once python related packages are installed
 deactivate
@@ -38,7 +38,7 @@ source /envs/brian2/bin/activate
 # Install packages
 pip install numpy sympy scipy matplotlib Sphinx pandas mpi4py ipython jupyter quantities neo elephant pynwb bokeh pyneuroml nose nineml scikit-learn PyWavelets
 # required packges to run CBGTC
-pip install blosc seaborn matlab
+pip install blosc networkx seaborn matlab
 
 # Install Brian2
 pip install brian2 matlab # matlabengine requires MATLAB licence
